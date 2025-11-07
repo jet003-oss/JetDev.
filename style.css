@@ -1,6 +1,4 @@
-/* ========== JetDev Style.css ========== */
-/* Ümumi Dizayn */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap');
 
 * {
   margin: 0;
@@ -11,37 +9,77 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(circle at top, #0a0a0a, #000);
   color: #fff;
-  overflow-x: hidden;
+  background: linear-gradient(-45deg, #000, #0a0014, #001a33, #1a0033);
+  background-size: 400% 400%;
+  animation: bgmove 15s ease infinite;
 }
 
-/* Neon Effekti */
-.neon {
+@keyframes bgmove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ===== LOADING ===== */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #000, #080014, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loader-text {
+  font-size: 3em;
   color: #00ffff;
+  letter-spacing: 8px;
+  font-weight: 800;
   text-shadow:
-    0 0 5px #00ffff,
     0 0 10px #00ffff,
     0 0 20px #00ffff,
     0 0 40px #00ffff;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-/* Header */
+.loader-logo img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+  to { text-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== HEADER ===== */
 header {
   text-align: center;
   padding: 100px 20px 60px;
-  background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
 }
 
 header h1 {
-  font-size: 3em;
-  letter-spacing: 3px;
+  font-size: 3.5em;
   color: #00ffff;
+  text-shadow: 0 0 20px #00ffff;
 }
 
 header h2 {
   color: #ccc;
-  font-weight: 400;
   margin-top: 10px;
   font-size: 1.1em;
 }
@@ -67,7 +105,7 @@ header h2 {
   box-shadow: 0 0 15px #00ffff;
 }
 
-/* Bölmələr */
+/* ===== SECTIONS ===== */
 section {
   padding: 80px 20px;
   max-width: 900px;
@@ -76,7 +114,7 @@ section {
 }
 
 section h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 20px;
   color: #00ffff;
   text-shadow: 0 0 10px #00ffff;
@@ -88,16 +126,7 @@ section p {
   line-height: 1.7em;
 }
 
-/* TikTok bölməsi */
-.tiktok-embed {
-  margin-top: 30px;
-  border: 2px solid #00ffff;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  background: #111;
-}
-
-/* Layihələr Bölməsi */
+/* ===== PROJECTS ===== */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -118,7 +147,7 @@ section p {
   box-shadow: 0 0 20px #00ffff;
 }
 
-/* Əlaqə Bölməsi */
+/* ===== CONTACT ===== */
 .contact a {
   display: inline-block;
   margin: 10px;
@@ -132,35 +161,18 @@ section p {
   text-shadow: 0 0 10px #00ffff;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 30px 10px;
   background: #000;
   font-size: 0.9em;
-  border-top: 1px solid #111;
   color: #888;
+  border-top: 1px solid #111;
 }
 
-/* Animasiya: Parlayan arxa fon */
-@keyframes backgroundMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-body {
-  background: linear-gradient(-45deg, #000, #111, #1a0033, #001f33);
-  background-size: 400% 400%;
-  animation: backgroundMove 15s ease infinite;
-}
-
-/* Responsiv */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2.3em;
-  }
-  section h2 {
-    font-size: 2em;
-  }
+  header h1 { font-size: 2.5em; }
+  section h2 { font-size: 2em; }
 }
