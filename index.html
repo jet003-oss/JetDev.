@@ -2,128 +2,117 @@
 <html lang="az">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JetDev — Gamer & Bot Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JetDev | Foreverjet</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0f14;
-      color: #e5e5e5;
+    /* LOADING ANİMASİYASI */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
     }
 
-    header {
-      text-align: center;
-      padding: 40px 10px;
-      background: linear-gradient(90deg, #7c3aed, #06b6d4);
+    .loader-circle {
+      width: 80px;
+      height: 80px;
+      border: 6px solid #333;
+      border-top: 6px solid #00bfff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .loader-text {
       color: white;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      color: #dcdcdc;
-      font-size: 1rem;
-    }
-
-    nav {
-      text-align: center;
+      font-size: 1.2em;
       margin-top: 15px;
+      font-family: monospace;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #ccc;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: white;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-
-    section h2 {
-      color: #7c3aed;
-      border-bottom: 1px solid #222;
-      padding-bottom: 8px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 18px;
-      background: #7c3aed;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .links a:hover {
-      background: #06b6d4;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      color: #999;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
+    /* Sayt əsas hissəsi gizli qalsın yüklənənə qədər */
+    #main-content {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>JetDev</h1>
-    <p>Gamer 🎮 | Discord Bot Developer 🤖</p>
-    <nav>
-      <a href="#bot">Bot</a>
-      <a href="#stream">Yayım</a>
-      <a href="#contact">Əlaqə</a>
-    </nav>
-  </header>
 
-  <section id="bot">
-    <h2>Discord Bot</h2>
-    <p>JetDev müxtəlif Discord botları yaradır — musiqi, idarəetmə və avtomatlaşdırma funksiyaları ilə.</p>
-    <div class="links">
-      <a href="#">Komandalar</a>
-    </div>
-  </section>
+  <!-- LOADING ANİMASİYASI -->
+  <div id="loader">
+    <div class="loader-circle"></div>
+    <div class="loader-text">JetDev yüklənir...</div>
+  </div>
 
-  <section id="stream">
-    <h2>Oyun və Yayım</h2>
-    <p>Məni TikTok-da izləyə bilərsən! Canlı yayımda oyun və texnoloji məzmun paylaşılır.</p>
-    <div class="links">
-      <a href="https://www.tiktok.com/@last_jett" target="_blank">TikTok-da izlə</a>
-    </div>
-  </section>
+  <!-- SAYTIN ƏSAS HİSSƏSİ -->
+  <div id="main-content">
+    <header>
+      <h1>JetDev</h1>
+      <h2>Oyunçu • Yayımçı • Bot Developer</h2>
+      <div class="links">
+        <a class="btn" href="https://discord.gg/EdsdNsAs" target="_blank">Join Discord</a>
+        <a class="btn" href="https://www.tiktok.com/@last_jett" target="_blank">TikTok-a bax</a>
+      </div>
+    </header>
 
-  <section id="contact">
-    <h2>Əlaqə</h2>
-    <p>Discord istifadəçi adım: <strong>foreverjet</strong></p>
-    <p>Discord serverimə qoşul:</p>
-    <div class="links">
-      <a href="https://discord.gg/EdsdNsAs" target="_blank">Join Discord</a>
-    </div>
-  </section>
+    <section>
+      <h2>Salam, mən Foreverjet 👋</h2>
+      <p>
+        Mən oyun və texnologiya sahəsində fəaliyyət göstərirəm. Discord botları hazırlayıram,
+        oyun yayımları edirəm və yeni layihələr üzərində işləyirəm.
+      </p>
 
-  <footer>
-    <p>© 2025 JetDev | Sayt hazırlanıb Vercel/Netlify üçün</p>
-  </footer>
+      <h3>💡 Haqqımda</h3>
+      <p>
+        - Discord istifadəçi adım: <b>foreverjet</b><br>
+        - Topluluğuma qoşul: 
+        <a href="https://discord.gg/EdsdNsAs" target="_blank">discord.gg/EdsdNsAs</a><br>
+        - TikTok səhifəm: 
+        <a href="https://www.tiktok.com/@last_jett" target="_blank">@last_jett</a>
+      </p>
+
+      <h3>🎥 TikTok Son Video</h3>
+      <p>Aşağıda mənim TikTok səhifəmdən ən son paylaşımı görə bilərsən:</p>
+
+      <!-- TikTok video embed -->
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@last_jett" data-unique-id="last_jett" data-embed-type="creator" style="max-width: 600px; margin:auto;">
+        <section> <a target="_blank" href="https://www.tiktok.com/@last_jett">@last_jett</a> </section>
+      </blockquote>
+      <script async src="https://www.tiktok.com/embed.js"></script>
+    </section>
+
+    <footer>
+      © 2025 JetDev | Foreverjet  
+      <div class="social">
+        <a href="https://discord.gg/EdsdNsAs">Discord</a> |
+        <a href="https://www.tiktok.com/@last_jett">TikTok</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS: Loader-ı gizlətmək -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      const content = document.getElementById("main-content");
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        content.style.display = "block";
+      }, 1500); // 1.5 saniyə sonra göstər
+    });
+  </script>
+
 </body>
 </html>
